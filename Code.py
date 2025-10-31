@@ -1,5 +1,5 @@
 print("--------------To_do_List--------------")
-do_list=[5]
+do_list=[5,6]
 done_list=[]
 
 def add_tasks():
@@ -14,7 +14,7 @@ def add_tasks():
             
 def marked_tasks():
     if len(done_list)==0:
-        print("You haven't did any tasks!")
+        print("You haven't did any tasks! first add the tasks.")
     else:
         print("The tasks you completed from the list are:")
         for number,Task in enumerate(done_list):
@@ -43,6 +43,7 @@ def completed_tasks():
                     if do_list[completed_task] not in done_list:
                             done_list.append(do_list[completed_task])
                             do_list.remove(do_list[completed_task])
+                            all_tasks()
                     else:
                         print("Your task has already marked as completed!")
                 else:
